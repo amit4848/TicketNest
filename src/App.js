@@ -27,8 +27,16 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     setProvider(provider)
 
-    const network = await provider.getNetwork()
-    const tokenMaster = new ethers.Contract(config[network.chainId].TokenMaster.address, TokenMaster, provider)
+    const network = await provider.getNetwork();
+
+const networkData = config[network.chainId];
+if (!networkData) {
+  alert(`Unsupported network with chain ID ${network.chainId}. Please switch to Hardhat network (localhost:8545).`);
+  return;
+}
+
+const tokenMaster = new ethers.Contract(networkData.TokenMaster.address, TokenMaster, provider);
+
     setTokenMaster(tokenMaster)
 
     const totalOccasions = await tokenMaster.totalOccasions()
