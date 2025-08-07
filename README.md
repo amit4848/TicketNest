@@ -8,10 +8,7 @@
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
 - [MetaMask](https://metamask.io/)
-
-
 - [NodeJS](https://nodejs.org/en/).
-- [MetaMask](https://metamask.io/).
 
 ## Setting Up
 
